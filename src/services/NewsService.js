@@ -1,37 +1,37 @@
 export default class NewsService {
-    API_URL = 'http://localhost:8080/api/';
-    BASE_ENDPOINT = 'articles/'
+    API_URL = 'http://localhost:8080/api';
+    BASE_ENDPOINT = 'articles'
 
-    findAll() {
-        const endpoint = 'products?_sort=id&_order=desc';
+    findAllPublished() {
+        const endpoint = `${this.BASE_ENDPOINT}/published`;
 
-        return fetch(`${this.API_URL}${endpoint}`)
+        return fetch(`${this.API_URL}/${endpoint}`)
             .then(response => response.json())
             .then(response => response);
     }
 
-    search(query = '') {
-        const endpoint = `products/?q=${query}&_sort=id&_order=desc`;
+    findAllArchived() {
+        const endpoint = `${this.BASE_ENDPOINT}/archived`;
 
-        return fetch(`${this.API_URL}${endpoint}`)
+        return fetch(`${this.API_URL}/${endpoint}`)
             .then(response => response.json())
             .then(response => response);
     }
 
     remove(id) {
-        const endpoint = `products/${id}`;
+        const endpoint = `${this.BASE_ENDPOINT}/${id}`;
 
-        return fetch(`${this.API_URL}${endpoint}`, {method: 'DELETE'})
+        return fetch(`${this.API_URL}/${endpoint}`, {method: 'DELETE'})
             .then(response => response.json())
             .then(response => response);
     }
 
     create(formData) {
-        const endpoint = 'products';
         const data = new URLSearchParams();
         Object.keys(formData).forEach(key => data.append(key, formData[key]));
+        data.append('date', new Date());
 
-        return fetch(`${this.API_URL}${endpoint}`,
+        return fetch(`${this.API_URL}/${this.BASE_ENDPOINT}`,
             {
                 method: 'POST',
                 body: data,
@@ -41,16 +41,19 @@ export default class NewsService {
             .then(response => response);
     }
 
-    update(id, formData) {
-        const endpoint = `products/${id}`;
-        const data = new URLSearchParams();
-        Object.keys(formData).forEach(key => data.append(key, formData[key]));
+    archive(id) {
+        const endpoint = `${this.BASE_ENDPOINT}/${id}`;
+        //const data = new URLSearchParams();
+        // Object.keys(formData).forEach(key => data.append(key, formData[key]));
+        const data = {
+            archiveDate: new Date()
+        }
 
         return fetch(`${this.API_URL}${endpoint}`,
             {
                 method: 'PUT',
-                body: data,
-                headers: {'Content-Type': 'application/x-www-form-urlencoded'}
+                body: data/*,
+                headers: {'Content-Type': 'application/x-www-form-urlencoded'}*/
             })
             .then(response => response.json())
             .then(response => response);

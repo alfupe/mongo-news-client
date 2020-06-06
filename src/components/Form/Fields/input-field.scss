@@ -1,0 +1,30 @@
+@import "src/assets/scss/variables";
+
+.input-field {
+    $if: &;
+    margin-bottom: $spacer / 2;
+
+    &--has-error {
+        #{$if}__label {
+            color: $color-danger;
+        }
+
+        #{$if}__control {
+            border-color: $color-danger;
+        }
+    }
+
+    &__label {
+        display: block;
+    }
+
+    &__control {
+        width: 100%;
+    }
+
+    &__error {
+        color: $color-danger;
+        font-size: 12px;
+        padding: 5px 0;
+    }
+}

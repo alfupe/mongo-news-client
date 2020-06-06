@@ -1,10 +1,41 @@
 {
     "global": {
-        "new": "Nueva"
+        "cancel": "Cancelar",
+        "accept": "Aceptar",
+        "new": "Nuevo",
+        "title": "Título",
+        "content": "Contenido",
+        "author": "Autor",
+        "description": "Descripción",
+        "item_updated": "Item actualizado",
+        "yes": "Sí",
+        "no": "No",
+        "archive": "Archivar",
+        "remove": "Borrar"
     },
     "component": {
         "confirm_button": {
             "message": "¿Confirmas la acción?"
+        },
+        "notification": {
+            "title": {
+                "success": "¡Todo bien!",
+                "error": "¡Error!"
+            }
+        }
+    },
+    "entity": {
+        "new": {
+            "create_title": "Nuevo artículo",
+            "property": {
+                "title": "$t(global.title)",
+                "content": "$t(global.content)",
+                "author": "$t(global.author)",
+                "description": "$t(global.description)"
+            },
+            "message": {
+                "success_created": "Noticia creada con éxito"
+            }
         }
     },
     "page": {
