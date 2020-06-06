@@ -1,6 +1,6 @@
 {
     "global": {
-
+        "new": "Nueva"
     },
     "component": {
         "confirm_button": {
