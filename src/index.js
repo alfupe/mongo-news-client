@@ -6,9 +6,9 @@ import './i18n/i18n';
 import './assets/scss/main.scss';
 
 ReactDOM.render(
-  <React.StrictMode>
+  /*<React.StrictMode>*/
     <App />
-  </React.StrictMode>,
+  /*</React.StrictMode>*/,
   document.getElementById('root')
 );
 

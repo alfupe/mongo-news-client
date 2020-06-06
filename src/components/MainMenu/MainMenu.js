@@ -14,6 +14,7 @@ const MainMenu = props => {
         <Fragment>
             <Brand />
             <Menu theme="dark"
+                  mode="horizontal"
                   className="main-menu"
                   defaultSelectedKeys={[location]}
                   onClick={event => setLocation(event.key)}>

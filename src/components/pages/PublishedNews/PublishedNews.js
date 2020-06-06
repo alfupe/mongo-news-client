@@ -14,7 +14,7 @@ const PublishedNews = props => {
                        extra={[
                            <Button key="create"
                                    type="primary"
-                                   icon={<PlusOutlined />}>
+                                   icon={<PlusOutlined />} onClick={event => console.log('click click')}>
                                {i18n.t('global.new')}
                            </Button>
                        ]}
