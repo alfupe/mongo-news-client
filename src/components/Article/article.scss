@@ -1,10 +1,26 @@
-.article {
-    &__header {
+@import "src/assets/scss/variables";
 
+.article {
+    background-color: $gray-100;
+    border: $gray-300;
+    border-radius: 4px;
+    box-shadow: 0 2px 4px rgba($gray-400, 0.3);
+    margin-bottom: $spacer;
+
+    &__header {
+        display: flex;
+        align-items: baseline;
+        padding: $spacer / 2;
+        border-bottom: 1px solid $gray-200;
     }
 
-    &__content {
+    &__main {
+        display: flex;
+        padding: $spacer / 2;
+    }
 
+    &__text {
+        flex: 1;
     }
 
     &__actions {
@@ -12,18 +28,24 @@
     }
 
     &__title {
-
+        font-size: 20px;
+        font-weight: 300;
+        margin-right: $spacer / 3;
     }
 
     &__author {
-
+        color: $gray-400;
     }
 
     &__content {
-
+        color: $gray-400;
     }
 
     &__description {
+        margin-top: $spacer / 2;
 
+        &:empty {
+            display: none;
+        }
     }
 }

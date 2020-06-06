@@ -7,7 +7,6 @@ const PageContainer = props => {
         <section className="page-container">
             <div className="page-container__header">
                 <PageHeader title={props.title}
-                            ghost={false}
                             subTitle={props.subtitle}
                             extra={props.extra}
                 />

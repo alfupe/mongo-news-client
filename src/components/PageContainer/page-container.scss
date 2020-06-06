@@ -3,12 +3,12 @@
 .page-container {
     &__header {
         .ant-page-header {
-            //padding: 0 !important;
+            padding: 0 !important;
         }
     }
 
     &__content {
-        padding-top: $spacer * 2;
+        padding-top: $spacer;
         padding-bottom: $spacer * 2;
     }
 }
