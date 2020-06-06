@@ -1,0 +1,29 @@
+{
+    "global": {
+
+    },
+    "component": {
+        "confirm_button": {
+            "message": "¿Confirmas la acción?"
+        }
+    },
+    "page": {
+        "published": {
+            "title": "Noticias",
+            "menu": "Noticias",
+            "subtitle": "Listado de artículos publicados"
+        },
+        "archived": {
+            "title": "Archivos",
+            "menu": "Archivos",
+            "subtitle": "Listado de artículos archivados"
+        },
+        "error_404": {
+            "title": "Error 404",
+            "content": "La página solicitada no se encuentra disponible. Es posible que la URL no exista.",
+            "action":{
+                "back_to_home": "Vuelve al inicio"
+            }
+        }
+    }
+}

@@ -1,0 +1,11 @@
+@import "src/assets/scss/variables";
+
+.main-menu {
+    display: inline-flex;
+
+    .ant-menu-item {
+        margin: 0 !important;
+        height: $menu-height !important;
+        line-height: $menu-height !important;
+    }
+}

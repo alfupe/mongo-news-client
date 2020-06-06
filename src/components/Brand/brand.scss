@@ -1,0 +1,13 @@
+@import "src/assets/scss/variables";
+
+.brand {
+    display: inline-flex;
+    align-items: center;
+    max-width: 150px;
+    margin-right: $spacer;
+    cursor: pointer;
+
+    @media (max-width: 430px) {
+        display: none;
+    }
+}

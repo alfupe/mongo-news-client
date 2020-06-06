@@ -1,0 +1,14 @@
+@import "src/assets/scss/variables";
+
+.app-layout {
+    &__header {
+        display: flex;
+        height: auto !important;
+        padding: 0 $spacer !important;
+    }
+
+    &__content {
+        padding: $spacer;
+        min-height: calc(100vh - #{$menu-height}) !important;
+    }
+}

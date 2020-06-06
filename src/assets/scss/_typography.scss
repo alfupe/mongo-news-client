@@ -1,0 +1,15 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;700&display=swap');
+
+/*
+FONT WEIGHT
+Semibold: 700
+Regular: 400
+Light: 300
+Thin: 100
+*/
+body {
+    margin: 0;
+    font-family: $main-font;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
