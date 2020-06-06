@@ -34,7 +34,13 @@
                 "description": "$t(global.description)"
             },
             "message": {
-                "success_created": "Noticia creada con éxito"
+                "success_created": "Noticia creada con éxito",
+                "success_archived": "Noticia archivada con éxito",
+                "success_removed": "Noticia eliminada con éxito"
+            },
+            "confirm": {
+                "archive": "¿Seguro que quieres archivar la noticia?",
+                "remove": "¿Confirmas el borrado de la noticia?"
             }
         }
     },

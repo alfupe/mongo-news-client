@@ -73,7 +73,6 @@ const PublishedNews = props => {
                            </Button>
                        ]}
         >
-            {/*<pre>{JSON.stringify(articles, null , 4)}</pre>*/}
             <NewsList articles={articles}
                       onArchive={archive}
             />
