@@ -48,4 +48,10 @@
             display: none;
         }
     }
+
+    &__meta {
+        padding: $spacer / 3 $spacer / 2;
+        border-top: 1px solid $gray-200;
+        background-color: $gray-100;
+    }
 }

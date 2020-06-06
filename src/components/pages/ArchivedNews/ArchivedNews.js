@@ -4,7 +4,7 @@ import PageContainer from '../../PageContainer/PageContainer';
 import { I18nContext } from 'react-i18next';
 import NewsList from '../../NewsList/NewsList';
 import { ServicesContext } from '../../../context/ServicesProvider';
-import { notification, Result } from 'antd';
+import { Empty, notification } from 'antd';
 import NewsSkeleton from '../../NewsSkeleton/NewsSkeleton';
 
 const ArchivedNews = props => {
@@ -50,7 +50,7 @@ const ArchivedNews = props => {
                     ? <NewsList articles={articles}
                                 onRemove={remove}
                     />
-                    : <Result title={i18n.t('entity.new.no_content_title', {status: i18n.t('entity.new.status.archived', {count: 0})})} />
+                    : <Empty description={i18n.t('entity.new.no_content_title', {status: i18n.t('entity.new.status.archived', {count: 0})})} />
                 }
             </NewsSkeleton>
         </PageContainer>

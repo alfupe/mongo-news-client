@@ -2,7 +2,7 @@ import React, { useContext, useEffect, useState } from 'react';
 import { withAppLayout } from '../../HOC/WithAppLayout';
 import { I18nContext } from 'react-i18next';
 import PageContainer from '../../PageContainer/PageContainer';
-import { Button, Result } from 'antd';
+import { Button, Empty } from 'antd';
 import { PlusOutlined } from '@ant-design/icons';
 import Sidebar from '../../Sidebar/Sidebar';
 import { notification } from 'antd';
@@ -86,9 +86,9 @@ const PublishedNews = props => {
                     ? <NewsList articles={articles}
                                 onArchive={archive}
                     />
-                    : <Result title={i18n.t('entity.new.no_content_title', {status: i18n.t('entity.new.status.published', {count: 0})})}
-                              extra={renderCreateButton()}
-                    />
+                    : <Empty description={i18n.t('entity.new.no_content_title', {status: i18n.t('entity.new.status.published', {count: 0})})}>
+                        {renderCreateButton()}
+                    </Empty>
                 }
             </NewsSkeleton>
             <Sidebar visible={createSidebarIsVisible}

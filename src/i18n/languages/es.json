@@ -11,7 +11,8 @@
         "yes": "Sí",
         "no": "No",
         "archive": "Archivar",
-        "remove": "Borrar"
+        "remove": "Borrar",
+        "at": "en"
     },
     "component": {
         "confirm_button": {

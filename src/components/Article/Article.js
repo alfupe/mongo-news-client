@@ -1,7 +1,7 @@
 import React, { useContext } from 'react';
 import { I18nContext } from 'react-i18next';
 import { InboxOutlined, DeleteOutlined, UserOutlined } from '@ant-design/icons';
-import { Button, Popconfirm } from 'antd';
+import { Button, Popconfirm, Space, Tag } from 'antd';
 import dayjs from 'dayjs';
 import './article.scss';
 
@@ -45,14 +45,16 @@ const Article = props => {
                 </aside>
             </div>
             <footer className="article__meta">
-                {props.data.date &&
-                <div className="article__date">
-                    creación: {dayjs(props.data.date).format('DD/MM/YYYY HH:mm:ss')}
-                </div>}
-                {props.data.archiveDate &&
-                <div className="article__date">
-                    archivo: {dayjs(props.data.archiveDate).format('DD/MM/YYYY HH:mm:ss')}
-                </div>}
+                <Space>
+                    {props.data.date &&
+                    <Tag color="cyan">
+                        {i18n.t('entity.new.status.published')} {dayjs(props.data.date).format('DD/MM/YY HH:mm')}
+                    </Tag>}
+                    {props.data.archiveDate &&
+                    <Tag color="magenta">
+                        {i18n.t('entity.new.status.archived')} {dayjs(props.data.archiveDate).format('DD/MM/YY HH:mm')}
+                    </Tag>}
+                </Space>
             </footer>
         </article>
     );
