@@ -4,17 +4,22 @@ import PageContainer from '../../PageContainer/PageContainer';
 import { I18nContext } from 'react-i18next';
 import NewsList from '../../NewsList/NewsList';
 import { ServicesContext } from '../../../context/ServicesProvider';
-import { notification } from 'antd';
+import { notification, Result } from 'antd';
+import NewsSkeleton from '../../NewsSkeleton/NewsSkeleton';
 
 const ArchivedNews = props => {
     const {i18n} = useContext(I18nContext);
     const servicesContext = useContext(ServicesContext);
     const [articles, setArticles] = useState([]);
+    const [fetching, setFetching] = useState(true);
 
     const findAllPublished = () => {
+        setFetching(true);
         servicesContext.news
             .findAllArchived()
-            .then(articles => setArticles(articles));
+            .then(articles => setArticles(articles))
+            .catch(console.error)
+            .finally(() => setFetching(false));
     };
 
     const remove = id => {
@@ -40,9 +45,14 @@ const ArchivedNews = props => {
     return (
         <PageContainer title={i18n.t('page.archived.title')}
                        subtitle={i18n.t('page.archived.subtitle')}>
-            <NewsList articles={articles}
-                      onRemove={remove}
-            />
+            <NewsSkeleton fetching={fetching}>
+                {articles.length
+                    ? <NewsList articles={articles}
+                                onRemove={remove}
+                    />
+                    : <Result title={i18n.t('entity.new.no_content_title', {status: i18n.t('entity.new.status.archived', {count: 0})})} />
+                }
+            </NewsSkeleton>
         </PageContainer>
     );
 };

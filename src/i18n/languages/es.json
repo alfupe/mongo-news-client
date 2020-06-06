@@ -27,6 +27,7 @@
     "entity": {
         "new": {
             "create_title": "Nuevo artículo",
+            "no_content_title": "No hay artículos {{status}}",
             "property": {
                 "title": "$t(global.title)",
                 "content": "$t(global.content)",
@@ -41,6 +42,12 @@
             "confirm": {
                 "archive": "¿Seguro que quieres archivar la noticia?",
                 "remove": "¿Confirmas el borrado de la noticia?"
+            },
+            "status": {
+                "published": "publicado",
+                "published_plural": "publicados",
+                "archived": "archivado",
+                "archived_plural": "archivados"
             }
         }
     },
