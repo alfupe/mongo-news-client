@@ -22,7 +22,7 @@ const PublishedNews = props => {
         servicesContext.news
             .create(values)
             .then(response => {
-                notification.succcess({
+                notification.success({
                     message: i18n.t('component.notification.title.success'),
                     description: i18n.t('entity.new.message.success_created')
                 });
@@ -32,7 +32,7 @@ const PublishedNews = props => {
             .catch(error => {
                 notification.error({
                     message: i18n.t('component.notification.title.error'),
-                    description: error
+                    description: error.toString()
                 });
             });
     };
