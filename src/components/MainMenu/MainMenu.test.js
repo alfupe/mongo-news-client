@@ -10,8 +10,8 @@ test('should render without crashing', () => {
         <MainMenu />
       </I18nextProvider>
   );
-  const publishedMenuItem = getByText(/page.published.menu/i);
-  const archivedMenuItem = getByText(/page.archived.menu/i);
+  const publishedMenuItem = getByText(/News/i);
+  const archivedMenuItem = getByText(/Archives/i);
   expect(publishedMenuItem).toBeInTheDocument();
   expect(archivedMenuItem).toBeInTheDocument();
 });

@@ -12,16 +12,16 @@ describe('<ArticleForm /> submit validation', function () {
                 <ArticleForm onSubmit={onSubmit} />
             </I18nextProvider>
         );
-        const submitButton = getByText(/global.accept/i).closest('button');
+        const submitButton = getByText(/Accept/i).closest('button');
 
         await wait(() => {
             fireEvent.click(submitButton);
         });
 
-        expect(getByPlaceholderText(/entity.new.property.title/i).nextSibling).toHaveTextContent('global.required');
-        expect(getByPlaceholderText(/entity.new.property.author/i).nextSibling).toHaveTextContent('global.required');
-        expect(getByPlaceholderText(/entity.new.property.content/i).nextSibling).toHaveTextContent('global.required');
-        expect(getByPlaceholderText(/entity.new.property.description/i).nextSibling).toHaveTextContent('global.required');
+        expect(getByPlaceholderText(/Title/i).nextSibling).toHaveTextContent('Required');
+        expect(getByPlaceholderText(/Author/i).nextSibling).toHaveTextContent('Required');
+        expect(getByPlaceholderText(/Content/i).nextSibling).toHaveTextContent('Required');
+        expect(getByPlaceholderText(/Description/i).nextSibling).toHaveTextContent('Required');
         expect(submitButton).toHaveAttribute('disabled');
         expect(onSubmit).toBeCalledTimes(0);
     });
@@ -33,13 +33,13 @@ describe('<ArticleForm /> submit validation', function () {
                 <ArticleForm onSubmit={onSubmit} />
             </I18nextProvider>
         );
-        const submitButton = getByText(/global.accept/i).closest('button');
+        const submitButton = getByText(/Accept/i).closest('button');
 
         await wait(() => {
-            fireEvent.change(getByPlaceholderText(/entity.new.property.title/i), { target: { value: 'Test title' } });
-            fireEvent.change(getByPlaceholderText(/entity.new.property.author/i), { target: { value: 'Test Author' } });
-            fireEvent.change(getByPlaceholderText(/entity.new.property.content/i), { target: { value: 'Test Content' } });
-            fireEvent.change(getByPlaceholderText(/entity.new.property.description/i), { target: { value: 'Test Description' } });
+            fireEvent.change(getByPlaceholderText(/Title/i), { target: { value: 'Test title' } });
+            fireEvent.change(getByPlaceholderText(/Author/i), { target: { value: 'Test Author' } });
+            fireEvent.change(getByPlaceholderText(/Content/i), { target: { value: 'Test Content' } });
+            fireEvent.change(getByPlaceholderText(/Description/i), { target: { value: 'Test Description' } });
             fireEvent.click(submitButton);
         });
 
