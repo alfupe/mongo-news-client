@@ -12,7 +12,8 @@
         "no": "No",
         "archive": "Archivar",
         "remove": "Borrar",
-        "at": "en"
+        "at": "en",
+        "required": "Requerido"
     },
     "component": {
         "confirm_button": {

@@ -11,7 +11,7 @@ const ArticleForm = props => {
     const {i18n} = useContext(I18nContext);
 
     return (
-        <Formik validationSchema={validationSchema}
+        <Formik validationSchema={validationSchema(i18n)}
                 initialValues={{
                     title: '',
                     content: '',

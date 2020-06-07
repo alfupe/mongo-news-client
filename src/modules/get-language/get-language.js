@@ -1,6 +1,5 @@
-// TODO: mockear navigator y testear
-const getLanguage = () => {
-    return (navigator.language || navigator.userLanguage || '').split('-')[0] || null;
+const getLanguage = (navigatorObject = navigator) => {
+    return (navigatorObject.language || navigatorObject.userLanguage || '').split('-')[0] || null;
 };
 
 export default getLanguage;
