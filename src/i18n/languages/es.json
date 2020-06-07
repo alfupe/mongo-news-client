@@ -23,6 +23,9 @@
             "title": {
                 "success": "¡Todo bien!",
                 "error": "¡Error!"
+            },
+            "message": {
+                "error": "No se ha podido completar la acción debido a un error"
             }
         }
     },
@@ -67,7 +70,7 @@
         "error_404": {
             "title": "Error 404",
             "content": "La página solicitada no se encuentra disponible. Es posible que la URL no exista.",
-            "action":{
+            "action": {
                 "back_to_home": "Vuelve al inicio"
             }
         }

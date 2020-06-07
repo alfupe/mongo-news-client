@@ -32,7 +32,7 @@ const PublishedNews = props => {
             .catch(error => {
                 notification.error({
                     message: i18n.t('component.notification.title.error'),
-                    description: error.toString()
+                    description: i18n.t('component.notification.message.error')
                 });
             });
     };

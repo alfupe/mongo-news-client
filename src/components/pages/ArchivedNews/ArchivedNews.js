@@ -13,7 +13,7 @@ const ArchivedNews = props => {
     const [articles, setArticles] = useState([]);
     const [fetching, setFetching] = useState(true);
 
-    const findAllPublished = () => {
+    const findAllArchived = () => {
         setFetching(true);
         servicesContext.news
             .findAllArchived()
@@ -30,7 +30,7 @@ const ArchivedNews = props => {
                     message: i18n.t('component.notification.title.success'),
                     description: i18n.t('entity.new.message.success_removed')
                 });
-                findAllPublished();
+                findAllArchived();
             })
             .catch(error => {
                 notification.error({
@@ -40,7 +40,7 @@ const ArchivedNews = props => {
             });
     };
 
-    useEffect(findAllPublished, []);
+    useEffect(findAllArchived, []);
 
     return (
         <PageContainer title={i18n.t('page.archived.title')}
